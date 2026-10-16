@@ -9,6 +9,6 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 
 USER root
 
-RUN pip install astropy astroquery
+RUN pip install "numpy<2" "astropy<7" astroquery
 
 USER jovyan
