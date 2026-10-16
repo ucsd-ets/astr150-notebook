@@ -9,6 +9,13 @@ LABEL maintainer="UC San Diego ITS/ETS <ets-consult@ucsd.edu>"
 
 USER root
 
-RUN pip install "numpy<2" "astropy<7" astroquery
+# Match the package versions students were instructed to install, so that
+# any leftover user-site (~/.local) copies cannot cause numpy ABI mismatches.
+RUN pip install \
+    "astropy==8.0.1" \
+    "numpy==2.4.6" \
+    "matplotlib==3.11.2" \
+    "scipy==1.17.1" \
+    "astroquery==0.4.11"
 
 USER jovyan
